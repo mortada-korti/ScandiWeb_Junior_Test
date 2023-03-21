@@ -1,0 +1,48 @@
+@import "../../style.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 4rem;
+  border-bottom: 1px solid transparent;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  @include xs {
+    padding: 0 0.25rem;
+  }
+  .header--title {
+    @include xs {
+      font-size: 1.5rem;
+    }
+  }
+  .header--buttons {
+    display: flex;
+    gap: 1rem;
+    @include xs {
+      display: none;
+    }
+  }
+  .header--menu {
+    display: none;
+    @include xs {
+      display: flex;
+    }
+  }
+  .menu--items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    right: 0rem;
+    top: 4rem;
+    padding: 1rem;
+    gap: 1rem;
+    border-bottom-left-radius: 0.25rem;
+    @include xs {
+      display: flex;
+    }
+  }
+}

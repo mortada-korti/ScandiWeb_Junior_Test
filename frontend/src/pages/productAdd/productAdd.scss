@@ -1,0 +1,8 @@
+@import "../../style.scss";
+.productAdd {
+  flex-grow: 1;
+  padding: 1rem 2rem;
+  @include xs {
+    padding: 1rem;
+  }
+}

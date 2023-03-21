@@ -1,0 +1,9 @@
+{
+    "name": "mortada/backend",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}

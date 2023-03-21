@@ -1,0 +1,12 @@
+.notFound {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+  gap: 1rem;
+  font-size: 1.5rem;
+  a {
+    text-decoration: underline;
+    transition: 0.3s;
+  }
+}

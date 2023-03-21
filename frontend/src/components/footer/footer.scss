@@ -1,0 +1,13 @@
+.footer {
+  min-height: 4rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid transparent;
+  .footer--logo {
+    width: 2rem;
+    img {
+      max-width: 100%;
+    }
+  }
+}
