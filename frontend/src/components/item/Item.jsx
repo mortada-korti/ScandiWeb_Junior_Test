@@ -17,7 +17,7 @@ const Item = ({ item, handleChange }) => {
       className='item'
       sx={{
         border: "2px solid",
-        borderColor: selectedProducts.includes(item.id)
+        borderColor: selectedProducts.includes(parseInt(item.id))
           ? "error.main"
           : "transparent",
       }}>
@@ -25,7 +25,7 @@ const Item = ({ item, handleChange }) => {
         color='error'
         name={`product-${item.id}`}
         value={item.id}
-        id='delete-checkbox'
+        className='delete-checkbox'
         onChange={handleChange}
       />
       <div className='item--sku'>{item.sku}</div>

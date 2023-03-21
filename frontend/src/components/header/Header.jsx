@@ -148,7 +148,7 @@ const AddHeader = ({ props }) => {
           variant='contained'
           type='submit'
           form='product_form'>
-          SAVE
+          Save
         </Button>
 
         <Button
@@ -156,7 +156,7 @@ const AddHeader = ({ props }) => {
           color='error'
           variant='contained'
           onClick={() => props.navigate("/")}>
-          CANCEL
+          Cancel
         </Button>
       </div>
 
@@ -183,7 +183,7 @@ const AddHeader = ({ props }) => {
               variant='contained'
               type='submit'
               form='product_form'>
-              SAVE
+              Save
             </Button>
 
             <Button
@@ -191,7 +191,7 @@ const AddHeader = ({ props }) => {
               color='error'
               variant='contained'
               onClick={() => props.navigate("/")}>
-              CANCEL
+              Cancel
             </Button>
           </Items>
         </>
