@@ -23,7 +23,7 @@ abstract class DbModel extends Database
                 return $result;
             }
         } catch (PDOException $e) {
-            return $e->getMessage();
+            echo $e->getMessage();
         }
     }
 
