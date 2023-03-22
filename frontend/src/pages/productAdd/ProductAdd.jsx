@@ -179,15 +179,9 @@ const ProductAdd = () => {
           <option disabled value=''>
             Type Switcher
           </option>
-          <option id='DVD' value='DVD'>
-            DVD
-          </option>
-          <option id='Book' value='Book'>
-            Book
-          </option>
-          <option id='Furniture' value='Furniture'>
-            Furniture
-          </option>
+          <option value='DVD'>DVD</option>
+          <option value='Book'>Book</option>
+          <option value='Furniture'>Furniture</option>
         </NativeSelect>
         <FormHelperText>{errors.productType}</FormHelperText>
       </FormControl>

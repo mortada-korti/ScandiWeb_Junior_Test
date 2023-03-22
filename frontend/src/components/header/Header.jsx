@@ -79,6 +79,7 @@ const ListHeader = ({ props }) => {
               color='error'
               variant='contained'
               type='submit'
+              id='delete-product-btn'
               form='product_form'>
               MASS DELETE
             </Button>
@@ -120,6 +121,7 @@ const ListHeader = ({ props }) => {
                 color='error'
                 variant='contained'
                 type='submit'
+                id='delete-product-btn'
                 form='product_form'>
                 MASS DELETE
               </Button>
