@@ -27,6 +27,7 @@ const Item = ({ item, handleChange }) => {
         value={item.id}
         className='delete-checkbox'
         onChange={handleChange}
+        checked={selectedProducts.includes(parseInt(item.id))}
       />
       <div className='item--sku'>{item.sku}</div>
       <div className='item--name'>{item.name}</div>
