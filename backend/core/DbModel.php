@@ -39,11 +39,7 @@ abstract class DbModel extends Database
         $stmt->bindValue(":price", $price);
         $stmt->bindValue(":productType", $productType);
         $stmt->bindValue(":desc", $desc);
-        try {
-            $stmt->execute();
-        } catch (PDOException $e) {
-            return $e->getMessage();
-        }
+        $this->execute($stmt);
         $this->insertAttributes($attributes, $sku);
     }
 
@@ -56,11 +52,7 @@ abstract class DbModel extends Database
             $stmt->bindValue(":value", $val);
             $stmt->bindValue(":unit", $this->unit);
             $stmt->bindValue(":product_sku", $sku);
-            try {
-                $stmt->execute();
-            } catch (PDOException $e) {
-                return $e->getMessage();
-            }
+            $this->execute($stmt);
         }
     }
 
@@ -69,22 +61,31 @@ abstract class DbModel extends Database
         $sql = "SELECT sku FROM $this->tableName WHERE sku = :sku";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindValue(":sku", $sku);
-        $stmt->execute();
-        $result = $stmt->fetchAll();
-        if (is_array($result) && count($result)) {
-            return true;
+        try {
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            if (is_array($result) && count($result)) {
+                return true;
+            }
+            return false;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
         }
-        return false;
     }
 
     public function deleteProduct($selectedProducts)
     {
         $sql = "DELETE FROM $this->tableName WHERE id IN(" . implode(", ", $selectedProducts) . ")";
         $stmt = $this->pdo->prepare($sql);
+        $this->execute($stmt);
+    }
+
+    public function execute($stmt)
+    {
         try {
-            $result = $stmt->execute();
+            $stmt->execute();
         } catch (PDOException $e) {
-            return $e->getMessage();
+            echo $e->getMessage();
         }
     }
 }
